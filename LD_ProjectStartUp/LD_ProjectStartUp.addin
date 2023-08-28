@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Text>LD_ProjectStartUp - Command 1</Text>
+    <Description>Some description for LD_ProjectStartUp</Description>
+    <Assembly>LD_ProjectStartUp.dll</Assembly>
+    <FullClassName>LD_ProjectStartUp.Command1</FullClassName>
+    <ClientId>5cf80dfd-046a-4f9e-a17a-8194b0ba697e</ClientId>
+    <VendorId>com.YOUR COMPANY NAME</VendorId>
+    <VendorDescription>YOUR COMPANY NAME, YOUR COMPANY URL</VendorDescription>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>LD_ProjectStartUp - Command 2</Text>
+    <Description>Some description for LD_ProjectStartUp</Description>
+    <Assembly>LD_ProjectStartUp.dll</Assembly>
+    <FullClassName>LD_ProjectStartUp.Command2</FullClassName>
+    <ClientId>a39553ef-2edc-4cc1-a887-0d4107a13788</ClientId>
+    <VendorId>com.YOUR COMPANY NAME</VendorId>
+    <VendorDescription>YOUR COMPANY NAME, YOUR COMPANY URL</VendorDescription>
+  </AddIn>
+  <AddIn Type="Application">
+    <Name>LD_ProjectStartUp</Name>
+    <Assembly>LD_ProjectStartUp.dll</Assembly>
+    <FullClassName>LD_ProjectStartUp.App</FullClassName>
+    <ClientId>03ab3724-1f60-4769-b3f9-32a0a9b161bc</ClientId>
+    <VendorId>com.YOUR COMPANY NAME</VendorId>
+    <VendorDescription>YOUR COMPANY NAME, YOUR COMPANY URL</VendorDescription>
+  </AddIn>
+</RevitAddIns>
