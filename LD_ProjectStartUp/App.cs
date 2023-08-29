@@ -21,7 +21,7 @@ namespace LD_ProjectStartUp
         {
             frmProjectStartUp curForm = new frmProjectStartUp()
             {
-                Width = 240,
+                Width = 260,
                 Height = 180,
                 WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen,
                 Topmost = true,
@@ -37,22 +37,24 @@ namespace LD_ProjectStartUp
             {
                 //TaskDialog.Show("Project", "You have selected to start a new project");
 
-                frmNewProject curForm2 = new frmNewProject()
+                frmNewProject newForm = new frmNewProject()
                 {
-                    Width = 240,
+                    Width = 260,
                     Height = 180,
                     WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen,
                     Topmost = true,
                 };
+
+                newForm.ShowDialog();
             }
             else if (typeProject == "Existing Project")
             {
-                TaskDialog.Show("Project", "You have selected to work on an existing project");
+                //TaskDialog.Show("Project", "You have selected to work on an existing project");
 
-                //Forms.OpenFileDialog selectFile = new Forms.OpenFileDialog();
-                //selectFile.Filter = "Revit files|*.rvt;*.rfa;*.rte";
-                //selectFile.InitialDirectory = "S:\\";
-                //selectFile.Multiselect = false;
+                Forms.OpenFileDialog selectFile = new Forms.OpenFileDialog();
+                selectFile.Filter = "Revit files|*.rvt;*.rfa;*.rte";
+                selectFile.InitialDirectory = "S:\\";
+                selectFile.Multiselect = false;
             }
 
             return Result.Succeeded;
