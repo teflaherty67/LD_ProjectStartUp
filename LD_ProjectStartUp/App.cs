@@ -55,6 +55,22 @@ namespace LD_ProjectStartUp
                 selectFile.Filter = "Revit files|*.rvt;*.rfa;*.rte";
                 selectFile.InitialDirectory = "S:\\";
                 selectFile.Multiselect = false;
+
+                selectFile.ShowDialog();
+
+                string revitFile = "";
+
+                if (selectFile.ShowDialog() == Forms.DialogResult.OK)
+                    revitFile = selectFile.FileName;
+
+                if (revitFile == "")
+                {
+                    TaskDialog.Show("Error", "Please select a Revit file.");
+                    return Result.Failed;
+                }
+
+                // open Revit file
+                UIDocument activeDoc = uiapp.OpenAndActivateDocument(revitFile);
             }
 
             return Result.Succeeded;
