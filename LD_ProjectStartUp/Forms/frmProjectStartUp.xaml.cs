@@ -29,11 +29,11 @@ namespace LD_ProjectStartUp
         {
             if (rbnNew.IsChecked == true)
                 return rbnNew.Content.ToString();
+            else if (rbnExisting.IsChecked == true)
+                return rbnExisting.Content.ToString();
             else
-                return rbnExisting.Content.ToString();            
+                return null;
         }
-
-
 
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {

@@ -6,6 +6,7 @@ using Autodesk.Revit.UI;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Reflection;
 using System.Runtime.Versioning;
 using System.Windows.Markup;
 using System.Windows.Media;
@@ -19,6 +20,22 @@ namespace LD_ProjectStartUp
     {
         public Result OnStartup(UIControlledApplication app)
         {
+
+            app.Idling += Application_LDStartup;
+
+            return Result.Succeeded;
+        }
+
+        public Result OnShutdown(UIControlledApplication a)
+        {
+            a.Idling -= Application_LDStartup;
+            return Result.Succeeded;
+        }
+        private static void Application_LDStartup(object sender, Autodesk.Revit.UI.Events.IdlingEventArgs e)
+        {
+            var uiapp = sender as UIApplication;
+            uiapp.Idling -= Application_LDStartup;
+
             frmProjectStartUp curForm = new frmProjectStartUp()
             {
                 Width = 260,
@@ -56,7 +73,7 @@ namespace LD_ProjectStartUp
                 selectFile.InitialDirectory = "S:\\";
                 selectFile.Multiselect = false;
 
-                selectFile.ShowDialog();
+                //selectFile.ShowDialog();
 
                 string revitFile = "";
 
@@ -66,21 +83,11 @@ namespace LD_ProjectStartUp
                 if (revitFile == "")
                 {
                     TaskDialog.Show("Error", "Please select a Revit file.");
-                    return Result.Failed;
                 }
 
                 // open Revit file
                 UIDocument activeDoc = uiapp.OpenAndActivateDocument(revitFile);
-            }
-
-            return Result.Succeeded;
+            }             
         }
-
-        public Result OnShutdown(UIControlledApplication a)
-        {
-            return Result.Succeeded;
-        }
-
-
     }
 }
