@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using OfficeOpenXml;
 using Forms = System.Windows.Forms;
 
 namespace LD_ProjectStartUp
@@ -356,9 +357,7 @@ namespace LD_ProjectStartUp
                 t.Commit();
             }
 
-            #endregion
-
-            return Result.Succeeded;
+            #endregion           
         }
 
         internal static void ExistingProject(UIApplication uiapp)
