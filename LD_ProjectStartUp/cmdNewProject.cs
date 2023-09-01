@@ -14,7 +14,7 @@ using System.Reflection;
 namespace LD_ProjectStartUp
 {
     [Transaction(TransactionMode.Manual)]
-    public class Command1 : IExternalCommand
+    public class cmdNewProject : IExternalCommand
     {
         public Result Execute(ExternalCommandData commandData, ref string message, ElementSet elements)
         {
@@ -32,8 +32,8 @@ namespace LD_ProjectStartUp
         internal static PushButtonData GetButtonData()
         {
             // use this method to define the properties for this command in the Revit ribbon
-            string buttonInternalName = "btnCommand1";
-            string buttonTitle = "Button 1";
+            string buttonInternalName = "btnCommand2";
+            string buttonTitle = "Button 2";
 
             ButtonDataClass myButtonData1 = new ButtonDataClass(
                 buttonInternalName,
@@ -41,7 +41,7 @@ namespace LD_ProjectStartUp
                 MethodBase.GetCurrentMethod().DeclaringType?.FullName,
                 Properties.Resources.Blue_32,
                 Properties.Resources.Blue_16,
-                "This is a tooltip for Button 1");
+                "This is a tooltip for Button 2");
 
             return myButtonData1.Data;
         }

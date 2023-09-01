@@ -7,24 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LD_ProjectStartUp", "LD_Pro
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		2021Debug|Any CPU = 2021Debug|Any CPU
-		2021Release|Any CPU = 2021Release|Any CPU
-		2022Debug|Any CPU = 2022Debug|Any CPU
-		2022Release|Any CPU = 2022Release|Any CPU
 		2023Debug|Any CPU = 2023Debug|Any CPU
 		2023Release|Any CPU = 2023Release|Any CPU
 		2024Debug|Any CPU = 2024Debug|Any CPU
 		2024Release|Any CPU = 2024Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5CF80DFD-046A-4F9E-A17A-8194B0BA697E}.2021Debug|Any CPU.ActiveCfg = 2021Debug|Any CPU
-		{5CF80DFD-046A-4F9E-A17A-8194B0BA697E}.2021Debug|Any CPU.Build.0 = 2021Debug|Any CPU
-		{5CF80DFD-046A-4F9E-A17A-8194B0BA697E}.2021Release|Any CPU.ActiveCfg = 2021Release|Any CPU
-		{5CF80DFD-046A-4F9E-A17A-8194B0BA697E}.2021Release|Any CPU.Build.0 = 2021Release|Any CPU
-		{5CF80DFD-046A-4F9E-A17A-8194B0BA697E}.2022Debug|Any CPU.ActiveCfg = 2022Debug|Any CPU
-		{5CF80DFD-046A-4F9E-A17A-8194B0BA697E}.2022Debug|Any CPU.Build.0 = 2022Debug|Any CPU
-		{5CF80DFD-046A-4F9E-A17A-8194B0BA697E}.2022Release|Any CPU.ActiveCfg = 2022Release|Any CPU
-		{5CF80DFD-046A-4F9E-A17A-8194B0BA697E}.2022Release|Any CPU.Build.0 = 2022Release|Any CPU
 		{5CF80DFD-046A-4F9E-A17A-8194B0BA697E}.2023Debug|Any CPU.ActiveCfg = 2023Debug|Any CPU
 		{5CF80DFD-046A-4F9E-A17A-8194B0BA697E}.2023Debug|Any CPU.Build.0 = 2023Debug|Any CPU
 		{5CF80DFD-046A-4F9E-A17A-8194B0BA697E}.2023Release|Any CPU.ActiveCfg = 2023Release|Any CPU
