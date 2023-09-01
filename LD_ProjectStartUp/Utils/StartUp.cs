@@ -1,5 +1,8 @@
-﻿using Autodesk.Revit.DB;
+﻿using Autodesk.Revit.ApplicationServices;
+using Autodesk.Revit.Attributes;
+using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using Autodesk.Revit.UI.Selection;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +18,11 @@ namespace LD_ProjectStartUp
     {
         internal static void NewProject(UIApplication uiapp)
         {
+            //Application app = uiapp.Application;
+
+            //// this is a variable for the current Revit model
+            //Document curDoc = uiapp.ActiveUIDocument.Document;
+
             // hard-code Excel file
             string excelFile = "S:\\Shared Folders\\!RBA Addins\\Lifestyle Design\\Data Source\\NewProjectSetup.xlsx";
 
@@ -37,7 +45,7 @@ namespace LD_ProjectStartUp
 
             using (var package = new ExcelPackage(excelFile))
             {
-                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
+                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
 
                 ExcelWorkbook wb = package.Workbook;
 
