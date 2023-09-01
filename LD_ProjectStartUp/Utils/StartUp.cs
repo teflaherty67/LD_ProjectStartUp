@@ -92,7 +92,7 @@ namespace LD_ProjectStartUp
 
             newDoc.SaveAs(savePath);
 
-            UIDocument activeDoc = uiapp.OpenAndActivateDocument(savePath);
+            UIDocument curDoc = uiapp.OpenAndActivateDocument(savePath);
 
             #endregion
         }
@@ -117,7 +117,7 @@ namespace LD_ProjectStartUp
             }
 
             // open Revit file
-            UIDocument activeDoc = uiapp.OpenAndActivateDocument(revitFile);
+            UIDocument curDoc = uiapp.OpenAndActivateDocument(revitFile);
         }
     }
 }
