@@ -36,51 +36,7 @@ namespace LD_ProjectStartUp
 
             curForm.ShowDialog();
 
-            // get form data and do something
-
-            #region Excel
-
-            using (var package = new ExcelPackage(excelFile))
-            {
-                ExcelPackage.LicenseContext = LicenseContext.NonCommercial;
-
-                ExcelWorkbook wb = package.Workbook;
-
-                ExcelWorksheet ws;
-
-                if (curForm.GetComboboxFoundation() == "Basement" && curForm.GetComboboxFloors() == "1")
-                    ws = wb.Worksheets[0];
-                else if (curForm.GetComboboxFoundation() == "Basement" && curForm.GetComboboxFloors() == "2")
-                    ws = wb.Worksheets[1];
-                else if (curForm.GetComboboxFoundation() == "Crawlspace" && curForm.GetComboboxFloors() == "1")
-                    ws = wb.Worksheets[2];
-                else if (curForm.GetComboboxFoundation() == "Crawlspace" && curForm.GetComboboxFloors() == "2")
-                    ws = wb.Worksheets[3];
-                else if (curForm.GetComboboxFoundation() == "Slab" && curForm.GetComboboxFloors() == "1")
-                    ws = wb.Worksheets[4];
-                else
-                    ws = wb.Worksheets[5];
-
-                // get row & column count
-                int rows = ws.Dimension.Rows;
-                int columns = ws.Dimension.Columns;
-
-                // read Excel data into a list
-                for (int i = 1; i <= rows; i++)
-                {
-                    List<string> rowData = new List<string>();
-                    for (int j = 1; j <= columns; j++)
-                    {
-                        string cellContent = ws.Cells[i, j].Value.ToString();
-                        rowData.Add(cellContent);
-                    }
-                    dataSheets.Add(rowData);
-                }
-
-                dataSheets.RemoveAt(0);
-            }
-
-            #endregion
+            // get form data and do something            
 
             #region Variables
 
@@ -149,6 +105,50 @@ namespace LD_ProjectStartUp
             Document curDoc = uidoc.Document;
 
             ProjectInfo clientInfo = curDoc.ProjectInformation;
+
+            #region Excel
+
+            using (var package = new ExcelPackage(excelFile))
+            {
+                ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+
+                ExcelWorkbook wb = package.Workbook;
+
+                ExcelWorksheet ws;
+
+                if (curForm.GetComboboxFoundation() == "Basement" && curForm.GetComboboxFloors() == "1")
+                    ws = wb.Worksheets[0];
+                else if (curForm.GetComboboxFoundation() == "Basement" && curForm.GetComboboxFloors() == "2")
+                    ws = wb.Worksheets[1];
+                else if (curForm.GetComboboxFoundation() == "Crawlspace" && curForm.GetComboboxFloors() == "1")
+                    ws = wb.Worksheets[2];
+                else if (curForm.GetComboboxFoundation() == "Crawlspace" && curForm.GetComboboxFloors() == "2")
+                    ws = wb.Worksheets[3];
+                else if (curForm.GetComboboxFoundation() == "Slab" && curForm.GetComboboxFloors() == "1")
+                    ws = wb.Worksheets[4];
+                else
+                    ws = wb.Worksheets[5];
+
+                // get row & column count
+                int rows = ws.Dimension.Rows;
+                int columns = ws.Dimension.Columns;
+
+                // read Excel data into a list
+                for (int i = 1; i <= rows; i++)
+                {
+                    List<string> rowData = new List<string>();
+                    for (int j = 1; j <= columns; j++)
+                    {
+                        string cellContent = ws.Cells[i, j].Value.ToString();
+                        rowData.Add(cellContent);
+                    }
+                    dataSheets.Add(rowData);
+                }
+
+                dataSheets.RemoveAt(0);
+            }
+
+            #endregion
 
             #region Form Values
 
