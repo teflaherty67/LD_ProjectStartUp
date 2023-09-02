@@ -129,9 +129,6 @@
     <Compile Include="Forms\frmNewProject.xaml.cs">
       <DependentUpon>frmNewProject.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forms\frmProjectTemplate.xaml.cs">
-      <DependentUpon>frmProjectTemplate.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Forms\frmProjectStartUp.xaml.cs">
       <DependentUpon>frmProjectStartUp.xaml</DependentUpon>
     </Compile>
@@ -169,10 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Forms\frmNewProject.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Forms\frmProjectTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
