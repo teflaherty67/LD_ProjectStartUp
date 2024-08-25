@@ -21,7 +21,7 @@ namespace LD_ProjectStartUp
             Application app = uiapp.Application;
 
             // hard-code Excel file
-            string excelFile = "S:\\Shared Folders\\!RBA Addins\\Lifestyle Design\\Data Source\\NewProjectSetup.xlsx";
+            string excelFile = @"C:\Users\tefla\OneDrive\Desktop\NewProjectSetup.xlsx";
 
             // create a list to hold the sheetdata
             List<List<string>> dataSheets = new List<List<string>>();
